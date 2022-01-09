@@ -1,9 +1,13 @@
 // SPDX-License-Identifier: MIT
+//Always Necessary!!
 
+//to define solidity version
 pragma solidity ^0.6.0;
 
+//imports SimpleStorage.sol contract
 import "./SimpleStorage.sol"; 
 
+//create contract
 contract StorageFactory is SimpleStorage {
     
     SimpleStorage[] public simpleStorageArray;
