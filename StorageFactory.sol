@@ -10,13 +10,25 @@ import "./SimpleStorage.sol";
 //create contract
 contract StorageFactory is SimpleStorage {
     
+    
+    //Keeps track of all different SimpleStorage contracts, in a list/array
+    //everytime simpleStorage contract is deployed, it addes to SimpleStorage Array
+    //therefore we create simpleStorageArray.push(simpleStorage); see F1
     SimpleStorage[] public simpleStorageArray;
     
+    
+    //will deploy/generate SimpleStorage contract
     function createSimpleStorageContract() public {
+        
+        //create an object of type SimpleStorage Contract
+        //Then we're gonna name it simpleStorage 
+        //Then we're saying it will be a new SimpleStorage contract that takes no input parameters "()"
         SimpleStorage simpleStorage = new SimpleStorage();
+        //F1
         simpleStorageArray.push(simpleStorage);
     }
     
+    //calls function from SimpleStorage.sol
     function sfStore(uint256 _simpleStorageIndex, uint256 _simpleStorageNumber) public {
         // Address 
         // ABI 
